@@ -179,7 +179,7 @@ def create_sitemap():
     # print(xml_str)
     with open(os.path.join(os.path.dirname(__file__), 'sitemap.xml'), mode='w', encoding='utf-8') as f:
         f.write(xml_str)
-    print("sitemap")
+    
 
 
 def main():
@@ -203,6 +203,8 @@ def main():
         jsonstr = create_blog_data_Json(ARTICLES_DIR, BASE_DIR)
         write_data_json(jsonstr)
         print("blog_data.json索引文件更新完毕！")
+        create_sitemap()
+        print("sitemap.xml 更新完毕！")
     elif args.suiyantest:
         create_test(args.suiyantest)
         print("测试文件创建完毕！")
@@ -210,6 +212,8 @@ def main():
         jsonstr = create_blog_data_Json(ARTICLES_DIR, BASE_DIR)
         write_data_json(jsonstr)
         print("blog_data.json索引文件更新完毕！")
+        create_sitemap()
+        print("sitemap.xml 更新完毕！")
     elif args.sitemap:
         create_sitemap()
     else:
