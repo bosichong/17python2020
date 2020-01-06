@@ -1,0 +1,53 @@
+{
+    "blog_name": "SuiYan",
+    "blog_author": "J.sky",
+    "blog_description": "You see see you , This one day day di.",
+    "meta_description": " 碎言静态Blog，码兄累了吗？累了就休息一下，为未来的自己留下一些碎言片语吧。",
+    "meta_keywords":"SuiYan,博客,blog,静态博客,安装,教程,搭建,部署",
+    "profile_image":"assets/images/touxiang.jpg",
+    "blog_sns": [
+        {
+            "ico": "github",
+            "url": "https://github.com/bosichong/suiyan"
+        },
+        {
+            "ico": "git",
+            "url": "https://gitee.com/J_Sky/suiyan"
+        },
+        {
+            "ico": "weibo",
+            "url": "https://weibo.com/qq285911"
+        },
+        {
+            "ico": "qq",
+            "url": "https://user.qzone.qq.com/285911/"
+        },
+        {
+            "ico": "book",
+            "url": "https://www.zhihu.com/people/J_sky/activities"
+        }
+    ],
+    "nav": [
+        {
+            "ico": "home",
+            "text": "Blog Home",
+            "url": "index.html"
+        },
+        {
+            "ico": "archive",
+            "text": "Blog Archive",
+            "url": "archives.html"
+        },
+        {
+            "ico": "tags",
+            "text": "Blog Tag",
+            "url": "tags.html"
+        },
+        {
+            "ico": "user",
+            "text": "About Me",
+            "url": "p.html?p=aboutme"
+        }
+    ],
+    "blog_list":5
+}
