@@ -213,7 +213,7 @@ def main():
         write_data_json(jsonstr)
         print("blog_data.json索引文件更新完毕！")
         create_sitemap()
-        print("sitemap.xml 更新完毕！")
+        print("sitemap.xml更新完毕！")
     elif args.sitemap:
         create_sitemap()
     else:
