@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue_test_01,Vue学习笔记</title>
+</head>
+<body>
+<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="v1" v-bind:title="title" v-on:click="alt">
+{{ msg }}
+<p v-text="vtext"></p>
+<div v-html="vhtml"></div>
+</div>
+
+<script>
+    var v = new Vue({
+        el: "#v1",
+        data:{
+            msg:"Hello Vue!",
+            title:"试试把鼠标放上去。",
+            vtext:"我是通过v-text绑定的数据",
+            vhtml:"<h1>哈哈哈字是不是好大？"
+        },
+        methods:{
+            alt :function(){
+                alert("是不是有提示了？")
+            }
+        }
+    })
+</script>
+    
+</body>
+</html>
