@@ -1,4 +1,4 @@
-/* BuildTime:January14,202011:28:33 */
+/* BuildTime:January15,202010:47:40 */
 var suiyan = {} //命名一个自己用的空间
 
 
@@ -237,11 +237,11 @@ $(document).ready(function () {
         // $('#highlight').attr("href", "assets/plugins/highlight/styles/"+data.highlight+".css");
 
         suiyan.config = data;
-        // $("title").text(data.blog_name + data.meta_description);
         // $("meta[name='description']").attr("content", data.meta_description);
         // $("meta[name='author']").attr("content", data.blog_author);
         // $("meta[name='keywords']").attr("content", data.blog_keywords);
-        var metaheml = '<meta name="keywords" content="' + data.meta_keywords + '">\
+        var metaheml = '<title>'+data.blog_name + data.meta_description+'</title>\
+        <meta name="keywords" content="' + data.meta_keywords + '">\
         <meta name="description" content="' + data.meta_description + '">\
         <meta name="author" content="' + data.blog_author + '">';
         $("meta[name='viewport']").after(metaheml);

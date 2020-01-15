@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue_test_01,Vue学习笔记</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/plugins/bootstrap/css/bootstrap.min.css">
+</head>
+
+<body>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="/assets/plugins/vue.js"></script>
+
+    <div id="app">
+
+        <form action="">
+            <label for="">ID:</label>
+            <input type="text" v-model="id">
+            <label for="">name:</label>
+            <input type="text" v-model="name">
+            <input type="button" value="添加" v-on:click="add" class="btn btn-primary">
+            <input type="text" v-model="key">
+        </form>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>name</th>
+                    <th>管理</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr v-for="(item, index) in search(key)" :key="index">
+                    <th>{{ item.id }}</th>
+                    <th>{{ item.name }}</th>
+                    <th><a href="#" v-on:click.prevent="del(item.id)">删除</a></th>
+                </tr>
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                id: '',
+                name: '',
+                key: '',
+                items: [{
+                        id: 1,
+                        name: 'Python'
+                    },
+                    {
+                        id: 2,
+                        name: 'Java'
+                    },
+                    {
+                        id: 3,
+                        name: 'JavaScript'
+                    }
+                ]
+            },
+            methods: {
+                add() {
+                    let item = {
+                        id: this.id,
+                        name: this.name
+                    };
+                    this.items.push(item);
+                    this.id = ''
+                    this.name = ''
+
+                },
+                search(key) {
+                    return this.items.filter(el => {
+                        return el.name.indexOf(key) != -1
+                    });
+
+
+
+                },
+                del(id) {
+                    var i = this.items.findIndex(item => {
+                        if (item.id === id) {
+                            return true
+                        }
+                    })
+
+                    this.items.splice(i, 1)
+                }
+            },
+        })
+    </script>
+
+
+    <!-- Javascript -->
+    <script src="/assets/plugins/jquery-3.3.1.min.js"></script>
+    <script src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
