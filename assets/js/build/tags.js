@@ -1,4 +1,4 @@
-/* BuildTime:January15,202010:47:40 */
+/* BuildTime:January15,202010:52:37 */
 var suiyan = {} //命名一个自己用的空间
 
 
@@ -222,7 +222,7 @@ $(document).ready(function () {
     // footer.html
     $(".footer").load("assets/templates/footer.html", function (response, status, request) {
         if (status == "success")
-            console.warn("如果你能看到这里说明你已经很牛逼撩！欢迎进群讨论学习Q群:217840699");
+            console.error("如果你能看到这里说明你已经很牛逼撩！欢迎进群讨论学习Q群:217840699");
 
     });
 
