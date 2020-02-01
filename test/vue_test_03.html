@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue_test_01,Vue学习笔记</title>
+</head>
+
+<body>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="/assets/plugins/vue.js"></script>
+    <div id="app">
+        <p>监听器watch</p>
+        <input type="text" v-model="vt">
+        <p v-text="nvt"></p>
+    </div>
+
+    <div id="app1">
+        <p>计算属性</p>
+        <input type="text" v-model="vt">
+        <p v-text="rtvt"></p>
+    </div>
+
+   
+    <script>
+       var vm = new Vue({
+            el:"#app",
+            data:{
+                vt:"",
+                nvt:""
+            },
+            watch: {
+                vt:function(val){
+                    this.nvt=this.vt.split('').reverse().join('')
+
+                }
+            },
+        });
+
+        var vm1 = new Vue({
+            el :"#app1",
+            data:{
+                vt:""
+            },
+            computed: {
+                rtvt:function(){
+                    return this.vt.split("").reverse().join("")
+                }
+            },
+
+        })
+
+    </script>
+
+</body>
+
+</html>
