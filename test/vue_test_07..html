@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue_test_07,Vue学习笔记</title>
+</head>
+
+<body>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="/assets/plugins/vue.js"></script>
+    <!-- 引入路由模块 -->
+    <script src="/assets/plugins/vue-router.js"></script>
+
+    <div id="app">
+        <!-- 使用router-link定义组件导航 -->
+        <router-link to="/login?id=10">登录</router-link>
+        <router-link to="/register">注册</router-link>
+
+        <!-- 使用 router-view 显示匹配的组件 -->
+        <router-view></router-view>
+    </div>
+
+    <script>
+        const login = {
+            template: '<h1>登录组件---{{ $route.query.id }}---</h1>',
+            data(){
+                return {
+                    msg:'888'
+                }
+            },
+            created(){
+                console.log(this.$route)
+            }
+        }
+        const register = {
+            template: '<h1>注册组件</h1>'
+        }
+
+        // 创建一个路由示例，通过routers属性来匹配规则
+        const routerobj = new VueRouter({
+            routes: [
+                {
+                    path: '/login',
+                    component: login
+                },
+                {
+                    path: '/register',
+                    component: register
+                }
+            ]
+        });
+        // 穿件Vue实例
+        var vm = new Vue({
+            el: '#app',
+            router: routerobj
+        });
+    </script>
+
+</body>
+
+</html>
