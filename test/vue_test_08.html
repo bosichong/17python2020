@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue_test_08,Vue学习笔记</title>
+</head>
+
+<body>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="/assets/plugins/vue.js"></script>
+    <!-- 引入路由模块 -->
+    <script src="/assets/plugins/vue-router.js"></script>
+
+    <div id="app">
+        <!-- 定义首页 -->
+        <router-link to="/home">home首页</router-link>
+        <router-view></router-view>
+
+    </div>
+
+    <template id="home">
+        <div>
+            <p>登录与注册</p>
+            <router-link to="/home/login">登录</router-link>
+            <router-link to="/home/register">注册</router-link>
+            <router-view></router-view>
+        </div>
+
+    </template>
+
+    <script>
+        const home = {
+            template: '#home',
+        }
+
+        const login = {
+            template: '<h1>登录</h1>'
+        }
+        const register = {
+            template: '<h1>注册</h1>'
+        }
+        // 创建一个路由示例，通过routers属性来匹配规则
+        const router = new VueRouter({
+            routes: [{
+                path: '/home',
+                component: home,
+                children: [{
+                        path: 'login',
+                        component: login
+                    },
+                    {
+                        path: 'register',
+                        component: register
+                    }
+
+                ]
+            }]
+        });
+        // 穿件Vue实例
+        var vm = new Vue({
+            el: '#app',
+            router
+        });
+    </script>
+
+</body>
+
+</html>
