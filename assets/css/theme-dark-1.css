@@ -31,6 +31,9 @@ body {
   width: 28px;
   height: 28px;
 }
+.header #blog-nav #navigation .profile-section .social-list li a :hover {
+  color: red;
+}
 .header #blog-nav #navigation .profile-section .profile-image {
   width: 160px;
 }
@@ -39,6 +42,9 @@ body {
 }
 .header #blog-nav #navigation .blog-nav li a {
   color: #C7894F;
+}
+.header #blog-nav #navigation .blog-nav li a :hover {
+  color: red;
 }
 .header #blog-nav #navigation .sform .search {
   background-color: #1c1c1c;

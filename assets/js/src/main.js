@@ -53,7 +53,7 @@ $(document).ready(function () {
         //循环添加导航
         (function (data, ul) {
             for (let i = 0; i < data.length; i++) {
-                var lihtml = $('<li class="nav-item hide"><a class="nav-link" href="' + data[i].url + '"><i class="fa fa-' + data[i].ico + ' fa-lg"></i> ' + data[i].text + '</a></li>');
+                var lihtml = $('<li class="nav-item hide"><a class="nav-link" href="' + data[i].url + '"> <span><i class="fa fa-' + data[i].ico + ' fa-lg"></i> ' + data[i].text + '<sapn></a></li>');
                 ul.append(lihtml);
 
             }
