@@ -64,6 +64,20 @@ $(document).ready(function () {
         let str = $(".title").text();
         $("title").text(str);
 
+        // 添加修改文章修改GITHUB
+
+        $.getJSON("config.json",function (data, textStatus, jqXHR) {
+            var mkgiturl = '/articles/' + conname + '.md'; //组装URL地址
+            var githuburl = data.github+mkgiturl;//文章的GitHub地址
+
+            $('.giturl').attr("href", githuburl);
+            
+                
+            },
+        );
+        
+
+        
 
 
 

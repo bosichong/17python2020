@@ -1,4 +1,4 @@
-/* BuildTime:March19,202010:02:50 */
+/* BuildTime:March20,202009:43:46 */
 var suiyan = {} //命名一个自己用的空间
 
 
@@ -381,6 +381,20 @@ $(document).ready(function () {
         let str = $(".title").text();
         $("title").text(str);
 
+        // 添加修改文章修改GITHUB
+
+        $.getJSON("config.json",function (data, textStatus, jqXHR) {
+            var mkgiturl = '/articles/' + conname + '.md'; //组装URL地址
+            var githuburl = data.github+mkgiturl;//文章的GitHub地址
+
+            $('.giturl').attr("href", githuburl);
+            
+                
+            },
+        );
+        
+
+        
 
 
 
