@@ -11,7 +11,7 @@ $(document).ready(function () {
             var lihtml = '';
             for (let index = 0; index < element.data.length; index++) {
                 const el = element.data[index];
-                lihtml += '<li class="list-group-item"><a href="p.html?p='+el.url+'">'+el.title+'</a> <span title="发布日期">'+el.time+'</span></li>';
+                lihtml += '<li class="list-group-item"><a target="_blank" href="p.html?p='+el.url+'">'+el.title+'</a> <span title="发布日期">'+el.time+'</span></li>';
                 suiyan.con ++;
                 
             }

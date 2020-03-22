@@ -1,4 +1,4 @@
-/* BuildTime:March20,202009:43:46 */
+/* BuildTime:March22,202012:39:38 */
 var suiyan = {} //命名一个自己用的空间
 
 
@@ -348,7 +348,7 @@ $(document).ready(function () {
             for (let index = 0; index < suiyan.tag_json.data.length; index++) {
                 const element = suiyan.tag_json.data[index];
                 $tagul.append('<li>'+element.title+'</li>')
-                lihtml += '<li class="list-group-item"><a href="p.html?p='+element.url+'">'+element.title+'</a> <span class="meta" title="发布日期">'+element.time+'</span></li>';
+                lihtml += '<li class="list-group-item"><a target="_blank" href="p.html?p='+element.url+'">'+element.title+'</a> <span class="meta" title="发布日期">'+element.time+'</span></li>';
                 
             }
             $tagul.html(lihtml);
